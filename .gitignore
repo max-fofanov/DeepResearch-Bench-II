@@ -40,3 +40,6 @@ report/*/
 
 # UV lock
 uv.lock
+
+# Cascade cache contains source reports and raw judge responses
+.cascade-cache/

@@ -1,5 +1,11 @@
 <h1 align="center">DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Reports</h1>
 
+> **This fork adds a low-cost Jev → DeepSeek evaluator.** Run
+> `uv run python run_evaluation.py --judge cascade --budget_usd 2` with
+> `OPENROUTER_API_KEY` configured. See [CASCADE.md](CASCADE.md) for routing,
+> resumable evaluation, cost controls and validation. GPT-5.5 remains the default.
+
+
 <div align="center">
 
 <a href="https://agentresearchlab.org/benchmarks/deepresearch-bench-ii/index.html#home"><img alt="Website" src="https://img.shields.io/badge/🌐%20Website-DeepResearch%20Bench%20II-blue"></a>

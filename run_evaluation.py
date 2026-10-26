@@ -583,4 +583,13 @@ def main():
     print(f"[done] processing completed, results appended to {out_jsonl}")
 
 if __name__ == "__main__":
+    # Keep the original GPT evaluator as the default; cascade has its own safe resume/budget CLI.
+    import sys
+    selector = argparse.ArgumentParser(add_help=False)
+    selector.add_argument('--judge', choices=('gpt', 'cascade'), default='gpt')
+    selected, remaining = selector.parse_known_args()
+    if selected.judge == 'cascade':
+        from run_cascade_evaluation import main as cascade_main
+        raise SystemExit(cascade_main(remaining))
+    sys.argv = [sys.argv[0], *remaining]
     main()
